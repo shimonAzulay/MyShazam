@@ -36,6 +36,10 @@
 		2E7FCBFF2539E28B00C756DA /* ShazamStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCBFE2539E28B00C756DA /* ShazamStoryboard.storyboard */; };
 		2E7FCC03253A177100C756DA /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC02253A177100C756DA /* PagerViewController.swift */; };
 		2E7FCC07253A1BA100C756DA /* ShazamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC06253A1BA100C756DA /* ShazamPresenter.swift */; };
+		2E7FCC16253A367A00C756DA /* LibraryStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCC15253A367A00C756DA /* LibraryStoryboard.storyboard */; };
+		2E7FCC1D253A3E5200C756DA /* ChartsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCC1C253A3E5200C756DA /* ChartsStoryboard.storyboard */; };
+		2E7FCC20253A3F2000C756DA /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC1F253A3F2000C756DA /* ChartsViewController.swift */; };
+		2E7FCC23253A401C00C756DA /* ChartsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC22253A401C00C756DA /* ChartsPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +74,10 @@
 		2E7FCBFE2539E28B00C756DA /* ShazamStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShazamStoryboard.storyboard; sourceTree = "<group>"; };
 		2E7FCC02253A177100C756DA /* PagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
 		2E7FCC06253A1BA100C756DA /* ShazamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamPresenter.swift; sourceTree = "<group>"; };
+		2E7FCC15253A367A00C756DA /* LibraryStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LibraryStoryboard.storyboard; sourceTree = "<group>"; };
+		2E7FCC1C253A3E5200C756DA /* ChartsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChartsStoryboard.storyboard; sourceTree = "<group>"; };
+		2E7FCC1F253A3F2000C756DA /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
+		2E7FCC22253A401C00C756DA /* ChartsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +110,7 @@
 		2E7FCB0C2539B85D00C756DA /* MyShazam */ = {
 			isa = PBXGroup;
 			children = (
+				2E7FCC18253A3E0800C756DA /* Charts */,
 				2E7FCBF62539E19600C756DA /* Shazam */,
 				2E7FCBF52539DA2800C756DA /* Coordinators */,
 				2E7FCBB32539BB5600C756DA /* Collection */,
@@ -187,6 +196,7 @@
 			children = (
 				2E7FCBC62539BB5600C756DA /* Cells */,
 				2E7FCBCD2539BB5600C756DA /* LibraryCollectionViewController.swift */,
+				2E7FCC15253A367A00C756DA /* LibraryStoryboard.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -280,6 +290,40 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		2E7FCC18253A3E0800C756DA /* Charts */ = {
+			isa = PBXGroup;
+			children = (
+				2E7FCC1B253A3E2300C756DA /* View */,
+				2E7FCC1A253A3E1A00C756DA /* Model */,
+				2E7FCC19253A3E1200C756DA /* Presenter */,
+			);
+			path = Charts;
+			sourceTree = "<group>";
+		};
+		2E7FCC19253A3E1200C756DA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E7FCC22253A401C00C756DA /* ChartsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		2E7FCC1A253A3E1A00C756DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2E7FCC1B253A3E2300C756DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E7FCC1C253A3E5200C756DA /* ChartsStoryboard.storyboard */,
+				2E7FCC1F253A3F2000C756DA /* ChartsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -337,7 +381,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E7FCC1D253A3E5200C756DA /* ChartsStoryboard.storyboard in Resources */,
 				2E7FCBE32539BB5600C756DA /* ActionItemCell.xib in Resources */,
+				2E7FCC16253A367A00C756DA /* LibraryStoryboard.storyboard in Resources */,
 				2E7FCB1A2539B86000C756DA /* LaunchScreen.storyboard in Resources */,
 				2E7FCBE22539BB5600C756DA /* LibraryItemCell.xib in Resources */,
 				2E7FCBE62539BB5600C756DA /* ShazamItemCell.xib in Resources */,
@@ -356,12 +402,14 @@
 				2E7FCBE42539BB5600C756DA /* ShazamItemCell.swift in Sources */,
 				2E7FCBE02539BB5600C756DA /* LibraryItem.swift in Sources */,
 				2E7FCBEA2539BB5600C756DA /* PagerPresenterProtocol.swift in Sources */,
+				2E7FCC23253A401C00C756DA /* ChartsPresenter.swift in Sources */,
 				2E7FCBDC2539BB5600C756DA /* CollectionViewCellProtocol.swift in Sources */,
 				2E7FCBD72539BB5600C756DA /* CollectionPresenterProtocol.swift in Sources */,
 				2E7FCBFB2539E22500C756DA /* ShazamViewController.swift in Sources */,
 				2E7FCBE72539BB5600C756DA /* LibraryItemCell.swift in Sources */,
 				2E7FCBE12539BB5600C756DA /* DataSource.swift in Sources */,
 				2E7FCBDD2539BB5600C756DA /* LibraryCollectionPresenter.swift in Sources */,
+				2E7FCC20253A3F2000C756DA /* ChartsViewController.swift in Sources */,
 				2E7FCBDB2539BB5600C756DA /* CollectionViewControllerProtocol.swift in Sources */,
 				2E7FCBE52539BB5600C756DA /* ActionItemCell.swift in Sources */,
 				2E7FCBDF2539BB5600C756DA /* ShazamItem.swift in Sources */,

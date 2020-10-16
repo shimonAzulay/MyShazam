@@ -130,16 +130,21 @@ extension PagerViewController
         // MARK: TODO - Need to create a getter
         
         switch pageModel.index {
+        case 0:
+            guard let vc = UIStoryboard(name: "LibraryStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LibraryCollectionViewController") as? LibraryCollectionViewController else { return nil }
+            vc.libraryCollectionPresenter = LibraryCollectionPresenter()
+            vc.model = pageModel
+            vc.pagerViewControllerDelegate = self
+            return vc
         case 1:
             guard let vc = UIStoryboard(name: "ShazamStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ShazamViewController") as? PageViewControllerProtocol else { return nil }
             vc.model = pageModel
             vc.pagerViewControllerDelegate = self
             return vc
         default:
-            let vc = LibraryCollectionViewController(collectionViewLayout: UICollectionViewLayout())
+            guard let vc = UIStoryboard(name: "ChartsStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ChartsViewController") as? PageViewControllerProtocol else { return nil }
             vc.model = pageModel
             vc.pagerViewControllerDelegate = self
-            vc.libraryCollectionPresenter = LibraryCollectionPresenter()
             return vc
         }
     }

@@ -7,13 +7,15 @@
 
 import UIKit
 
-class LibraryCollectionViewController: UICollectionViewController, PageViewControllerProtocol
+class LibraryCollectionViewController: UIViewController, PageViewControllerProtocol
 {
-    private weak var loaderIndicator: UIActivityIndicatorView?
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var model: PageModel?
     var pagerViewControllerDelegate: PagerViewControllerDelegate?
     
+    // MARK: TODO - Create LibraryPesenter
     var libraryCollectionPresenter: LibraryCollectionPresenter?
     
     override func viewDidLoad()
@@ -22,13 +24,17 @@ class LibraryCollectionViewController: UICollectionViewController, PageViewContr
         
         self.registerCollectionViewCells()
         self.configureCollectionView()
-        self.setupActivityIndicator()
+        self.view.bringSubviewToFront(self.activityIndicator)
         self.retrieveData()
+    }
+    
+    @IBAction func settingsTapped(_ sender: Any)
+    {
     }
 }
 
 // MARK: Data Source
-extension LibraryCollectionViewController
+extension LibraryCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate
 {
     private func retrieveData()
     {
@@ -37,22 +43,22 @@ extension LibraryCollectionViewController
         }
         
         presenter.retrieveData { [weak self] in
-            self?.loaderIndicator?.stopAnimating()
+            self?.activityIndicator.stopAnimating()
             self?.reloadUI()
         }
     }
     
-    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return self.libraryCollectionPresenter?.numberOfItems(in: section) ?? 0
     }
     
-    override func numberOfSections(in collectionView: UICollectionView) -> Int
+    func numberOfSections(in collectionView: UICollectionView) -> Int
     {
         return self.libraryCollectionPresenter?.numberOfSections ?? 0
     }
     
-    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
         guard let itemModel = self.libraryCollectionPresenter?.item(for: CollectionIndex(section: indexPath.section, row: indexPath.row)) else {
             return UICollectionViewCell()
@@ -79,15 +85,6 @@ extension LibraryCollectionViewController
 // MARK: UI helpers
 extension LibraryCollectionViewController {
     
-    private func setupActivityIndicator()
-    {
-        let loader = UIActivityIndicatorView(style: .large)
-        self.collectionView.addSubview(loader)
-        loader.center = self.collectionView.center
-        loader.startAnimating()
-        self.loaderIndicator = loader
-    }
-    
     private func reloadUI()
     {
         DispatchQueue.main.async { [weak self] in
@@ -96,7 +93,8 @@ extension LibraryCollectionViewController {
     }
     
     private func configureCollectionView() {
-        self.collectionView.backgroundColor = .white
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
         self.collectionView.collectionViewLayout = self.createCollectionViewLayout()
         self.collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }

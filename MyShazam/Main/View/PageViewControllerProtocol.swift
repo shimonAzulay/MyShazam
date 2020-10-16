@@ -11,5 +11,4 @@ protocol PageViewControllerProtocol: UIViewController
 {
     var model: PageModel? { get set }
     var pagerViewControllerDelegate: PagerViewControllerDelegate? { get set }
-    func loadPageData()
 }
