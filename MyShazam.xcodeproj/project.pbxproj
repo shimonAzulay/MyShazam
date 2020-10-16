@@ -29,11 +29,13 @@
 		2E7FCBE62539BB5600C756DA /* ShazamItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCBCB2539BB5600C756DA /* ShazamItemCell.xib */; };
 		2E7FCBE72539BB5600C756DA /* LibraryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBCC2539BB5600C756DA /* LibraryItemCell.swift */; };
 		2E7FCBE82539BB5600C756DA /* LibraryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBCD2539BB5600C756DA /* LibraryCollectionViewController.swift */; };
-		2E7FCBE92539BB5600C756DA /* MyStuffCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBCE2539BB5600C756DA /* MyStuffCollectionViewCell.swift */; };
 		2E7FCBEA2539BB5600C756DA /* PagerPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBD12539BB5600C756DA /* PagerPresenterProtocol.swift */; };
 		2E7FCBEB2539BB5600C756DA /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBD32539BB5600C756DA /* PageModel.swift */; };
-		2E7FCBEC2539BB5600C756DA /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBD52539BB5600C756DA /* PageVC.swift */; };
-		2E7FCBED2539BB5600C756DA /* AppController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBD62539BB5600C756DA /* AppController.swift */; };
+		2E7FCBF12539C58400C756DA /* PageViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBF02539C58400C756DA /* PageViewControllerProtocol.swift */; };
+		2E7FCBFB2539E22500C756DA /* ShazamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBFA2539E22500C756DA /* ShazamViewController.swift */; };
+		2E7FCBFF2539E28B00C756DA /* ShazamStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCBFE2539E28B00C756DA /* ShazamStoryboard.storyboard */; };
+		2E7FCC03253A177100C756DA /* PagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC02253A177100C756DA /* PagerViewController.swift */; };
+		2E7FCC07253A1BA100C756DA /* ShazamPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC06253A1BA100C756DA /* ShazamPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,11 +63,13 @@
 		2E7FCBCB2539BB5600C756DA /* ShazamItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShazamItemCell.xib; sourceTree = "<group>"; };
 		2E7FCBCC2539BB5600C756DA /* LibraryItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryItemCell.swift; sourceTree = "<group>"; };
 		2E7FCBCD2539BB5600C756DA /* LibraryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryCollectionViewController.swift; sourceTree = "<group>"; };
-		2E7FCBCE2539BB5600C756DA /* MyStuffCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStuffCollectionViewCell.swift; sourceTree = "<group>"; };
 		2E7FCBD12539BB5600C756DA /* PagerPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerPresenterProtocol.swift; sourceTree = "<group>"; };
 		2E7FCBD32539BB5600C756DA /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
-		2E7FCBD52539BB5600C756DA /* PageVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
-		2E7FCBD62539BB5600C756DA /* AppController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppController.swift; sourceTree = "<group>"; };
+		2E7FCBF02539C58400C756DA /* PageViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewControllerProtocol.swift; sourceTree = "<group>"; };
+		2E7FCBFA2539E22500C756DA /* ShazamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamViewController.swift; sourceTree = "<group>"; };
+		2E7FCBFE2539E28B00C756DA /* ShazamStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShazamStoryboard.storyboard; sourceTree = "<group>"; };
+		2E7FCC02253A177100C756DA /* PagerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerViewController.swift; sourceTree = "<group>"; };
+		2E7FCC06253A1BA100C756DA /* ShazamPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,8 @@
 		2E7FCB0C2539B85D00C756DA /* MyShazam */ = {
 			isa = PBXGroup;
 			children = (
+				2E7FCBF62539E19600C756DA /* Shazam */,
+				2E7FCBF52539DA2800C756DA /* Coordinators */,
 				2E7FCBB32539BB5600C756DA /* Collection */,
 				2E7FCBBD2539BB5600C756DA /* Library */,
 				2E7FCBCF2539BB5600C756DA /* Main */,
@@ -150,9 +156,9 @@
 		2E7FCBBD2539BB5600C756DA /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				2E7FCBC42539BB5600C756DA /* DataSource.swift */,
 				2E7FCBBE2539BB5600C756DA /* Presenter */,
 				2E7FCBC02539BB5600C756DA /* Models */,
-				2E7FCBC42539BB5600C756DA /* DataSource.swift */,
 				2E7FCBC52539BB5600C756DA /* Views */,
 			);
 			path = Library;
@@ -181,7 +187,6 @@
 			children = (
 				2E7FCBC62539BB5600C756DA /* Cells */,
 				2E7FCBCD2539BB5600C756DA /* LibraryCollectionViewController.swift */,
-				2E7FCBCE2539BB5600C756DA /* MyStuffCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -205,7 +210,6 @@
 				2E7FCBD02539BB5600C756DA /* Presenter */,
 				2E7FCBD22539BB5600C756DA /* Model */,
 				2E7FCBD42539BB5600C756DA /* View */,
-				2E7FCBD62539BB5600C756DA /* AppController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -229,9 +233,51 @@
 		2E7FCBD42539BB5600C756DA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				2E7FCBD52539BB5600C756DA /* PageVC.swift */,
+				2E7FCC02253A177100C756DA /* PagerViewController.swift */,
+				2E7FCBF02539C58400C756DA /* PageViewControllerProtocol.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2E7FCBF52539DA2800C756DA /* Coordinators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Coordinators;
+			sourceTree = "<group>";
+		};
+		2E7FCBF62539E19600C756DA /* Shazam */ = {
+			isa = PBXGroup;
+			children = (
+				2E7FCBF92539E1BB00C756DA /* Presenter */,
+				2E7FCBF82539E1B600C756DA /* View */,
+				2E7FCBF72539E1B000C756DA /* Model */,
+			);
+			path = Shazam;
+			sourceTree = "<group>";
+		};
+		2E7FCBF72539E1B000C756DA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2E7FCBF82539E1B600C756DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E7FCBFA2539E22500C756DA /* ShazamViewController.swift */,
+				2E7FCBFE2539E28B00C756DA /* ShazamStoryboard.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E7FCBF92539E1BB00C756DA /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E7FCC06253A1BA100C756DA /* ShazamPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -296,6 +342,7 @@
 				2E7FCBE22539BB5600C756DA /* LibraryItemCell.xib in Resources */,
 				2E7FCBE62539BB5600C756DA /* ShazamItemCell.xib in Resources */,
 				2E7FCB172539B86000C756DA /* Assets.xcassets in Resources */,
+				2E7FCBFF2539E28B00C756DA /* ShazamStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -311,23 +358,24 @@
 				2E7FCBEA2539BB5600C756DA /* PagerPresenterProtocol.swift in Sources */,
 				2E7FCBDC2539BB5600C756DA /* CollectionViewCellProtocol.swift in Sources */,
 				2E7FCBD72539BB5600C756DA /* CollectionPresenterProtocol.swift in Sources */,
-				2E7FCBED2539BB5600C756DA /* AppController.swift in Sources */,
+				2E7FCBFB2539E22500C756DA /* ShazamViewController.swift in Sources */,
 				2E7FCBE72539BB5600C756DA /* LibraryItemCell.swift in Sources */,
 				2E7FCBE12539BB5600C756DA /* DataSource.swift in Sources */,
 				2E7FCBDD2539BB5600C756DA /* LibraryCollectionPresenter.swift in Sources */,
 				2E7FCBDB2539BB5600C756DA /* CollectionViewControllerProtocol.swift in Sources */,
 				2E7FCBE52539BB5600C756DA /* ActionItemCell.swift in Sources */,
-				2E7FCBEC2539BB5600C756DA /* PageVC.swift in Sources */,
 				2E7FCBDF2539BB5600C756DA /* ShazamItem.swift in Sources */,
 				2E7FCBDE2539BB5600C756DA /* ActionItem.swift in Sources */,
 				2E7FCBD82539BB5600C756DA /* CollectionSectionModel.swift in Sources */,
 				2E7FCBE82539BB5600C756DA /* LibraryCollectionViewController.swift in Sources */,
-				2E7FCBE92539BB5600C756DA /* MyStuffCollectionViewCell.swift in Sources */,
 				2E7FCBD92539BB5600C756DA /* CollectionSectionItemModelProtocol.swift in Sources */,
 				2E7FCBEB2539BB5600C756DA /* PageModel.swift in Sources */,
 				2E7FCB0E2539B85D00C756DA /* AppDelegate.swift in Sources */,
 				2E7FCB102539B85D00C756DA /* SceneDelegate.swift in Sources */,
+				2E7FCC07253A1BA100C756DA /* ShazamPresenter.swift in Sources */,
 				2E7FCBDA2539BB5600C756DA /* CollectionModel.swift in Sources */,
+				2E7FCC03253A177100C756DA /* PagerViewController.swift in Sources */,
+				2E7FCBF12539C58400C756DA /* PageViewControllerProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

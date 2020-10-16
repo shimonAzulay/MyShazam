@@ -7,8 +7,13 @@
 
 import UIKit
 
-class LibraryCollectionViewController: UICollectionViewController
+class LibraryCollectionViewController: UICollectionViewController, PageViewControllerProtocol
 {
+    private weak var loaderIndicator: UIActivityIndicatorView?
+    
+    var model: PageModel?
+    var pagerViewControllerDelegate: PagerViewControllerDelegate?
+    
     var libraryCollectionPresenter: LibraryCollectionPresenter?
     
     override func viewDidLoad()
@@ -17,20 +22,26 @@ class LibraryCollectionViewController: UICollectionViewController
         
         self.registerCollectionViewCells()
         self.configureCollectionView()
-        
-        guard let presenter = self.libraryCollectionPresenter else {
-            return
-        }
-        
-        presenter.retrieveData { [weak self] in
-            self?.reloadUI()
-        }
+        self.setupActivityIndicator()
+        self.retrieveData()
     }
 }
 
 // MARK: Data Source
 extension LibraryCollectionViewController
 {
+    private func retrieveData()
+    {
+        guard let presenter = self.libraryCollectionPresenter else {
+            return
+        }
+        
+        presenter.retrieveData { [weak self] in
+            self?.loaderIndicator?.stopAnimating()
+            self?.reloadUI()
+        }
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
         return self.libraryCollectionPresenter?.numberOfItems(in: section) ?? 0
@@ -57,8 +68,25 @@ extension LibraryCollectionViewController
     }
 }
 
+extension LibraryCollectionViewController
+{
+    func loadPageData()
+    {
+        self.retrieveData()
+    }
+}
+
 // MARK: UI helpers
 extension LibraryCollectionViewController {
+    
+    private func setupActivityIndicator()
+    {
+        let loader = UIActivityIndicatorView(style: .large)
+        self.collectionView.addSubview(loader)
+        loader.center = self.collectionView.center
+        loader.startAnimating()
+        self.loaderIndicator = loader
+    }
     
     private func reloadUI()
     {
@@ -68,6 +96,7 @@ extension LibraryCollectionViewController {
     }
     
     private func configureCollectionView() {
+        self.collectionView.backgroundColor = .white
         self.collectionView.collectionViewLayout = self.createCollectionViewLayout()
         self.collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
     }

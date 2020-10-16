@@ -18,7 +18,7 @@ class PagerPresenter: PagerPresenterProtocol
 {
     private var pages: [PageModel]
     
-    var initialPage: PageModel { self.pages[0] }
+    var initialPage: PageModel { self.pages[1] }
     
     var numberOfPages: Int { self.pages.count }
     
@@ -45,6 +45,4 @@ class PagerPresenter: PagerPresenterProtocol
         
         return self.pages[page.index - 1]
     }
-    
-    
 }
