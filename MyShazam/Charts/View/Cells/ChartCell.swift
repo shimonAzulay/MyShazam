@@ -35,7 +35,7 @@ extension ChartCell: CollectionViewCellProtocol
 {
     func populateCell(itemModel: CollectionSectionItemModelProtocol)
     {
-        guard let chartItemModel = itemModel as? ChartsItem else {
+        guard let chartItemModel = itemModel as? ChartItem else {
             return
         }
         

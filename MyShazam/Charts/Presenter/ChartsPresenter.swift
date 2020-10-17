@@ -22,6 +22,11 @@ class ChartsPresenter: ChartsPresenterProtocol
     
     func retrieveData(complition: (() -> Void)?)
     {
+        guard chartsModel == nil else {
+            complition?()
+            return
+        }
+        
         DataSource.getChartsData { collectionModel in
             self.chartsModel = collectionModel
             complition?()

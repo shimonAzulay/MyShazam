@@ -89,7 +89,7 @@ extension ChartsViewController
         let libCell = UINib(nibName: "AroundTheWorldChartsCell", bundle: nil)
         self.collectionView.register(libCell, forCellWithReuseIdentifier: "AroundTheWorldChartsItemCell")
         let recentCell = UINib(nibName: "ChartCell", bundle: nil)
-        self.collectionView.register(recentCell, forCellWithReuseIdentifier: "ChartsItemCell")
+        self.collectionView.register(recentCell, forCellWithReuseIdentifier: "ChartItemCell")
     }
     
     private func createCollectionViewLayout() -> UICollectionViewLayout

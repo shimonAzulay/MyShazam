@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LibraryCollectionViewController: UIViewController, PageViewControllerProtocol
+class LibraryViewController: UIViewController, PageViewControllerProtocol
 {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
@@ -16,7 +16,7 @@ class LibraryCollectionViewController: UIViewController, PageViewControllerProto
     var pagerViewControllerDelegate: PagerViewControllerDelegate?
     
     // MARK: TODO - Create LibraryPesenter
-    var libraryCollectionPresenter: LibraryCollectionPresenter?
+    var libraryCollectionPresenter: LibraryPresenter?
     
     override func viewDidLoad()
     {
@@ -34,7 +34,7 @@ class LibraryCollectionViewController: UIViewController, PageViewControllerProto
 }
 
 // MARK: Data Source
-extension LibraryCollectionViewController: UICollectionViewDataSource, UICollectionViewDelegate
+extension LibraryViewController: UICollectionViewDataSource, UICollectionViewDelegate
 {
     private func retrieveData()
     {
@@ -75,7 +75,7 @@ extension LibraryCollectionViewController: UICollectionViewDataSource, UICollect
 }
 
 // MARK: UI helpers
-extension LibraryCollectionViewController {
+extension LibraryViewController {
     
     private func reloadUI()
     {

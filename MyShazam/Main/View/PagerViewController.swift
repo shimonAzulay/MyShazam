@@ -131,8 +131,8 @@ extension PagerViewController
         
         switch pageModel.index {
         case 0:
-            guard let vc = UIStoryboard(name: "LibraryStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LibraryCollectionViewController") as? LibraryCollectionViewController else { return nil }
-            vc.libraryCollectionPresenter = LibraryCollectionPresenter()
+            guard let vc = UIStoryboard(name: "LibraryStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LibraryCollectionViewController") as? LibraryViewController else { return nil }
+            vc.libraryCollectionPresenter = LibraryPresenter()
             vc.model = pageModel
             vc.pagerViewControllerDelegate = self
             return vc

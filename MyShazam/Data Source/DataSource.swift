@@ -27,7 +27,7 @@ struct DataSource {
     static func getChartsData(_ callBack: @escaping (_ model: CollectionModel) -> Void)
     {
         let aroundTheWorldChartsItems = AroundTheWorldChartsItem.createData()
-        let chartsItems = ChartsItem.createData()
+        let chartsItems = ChartItem.createData()
         
         let sections = [CollectionSectionModel(sectionName: "Around The World Charts", sectionItems: aroundTheWorldChartsItems),
                        CollectionSectionModel(sectionName: "Charts", sectionItems: chartsItems)]

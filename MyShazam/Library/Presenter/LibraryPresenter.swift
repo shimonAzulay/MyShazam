@@ -7,16 +7,20 @@
 
 import Foundation
 
-class LibraryCollectionPresenter: CollectionPresenterProtocol
+class LibraryPresenter: CollectionPresenterProtocol
 {
-    private var collectionModel: CollectionModel?
+    private var libraryModel: CollectionModel?
     
-    var numberOfSections: Int { self.collectionModel?.sections.count ?? 0 }
+    var numberOfSections: Int { self.libraryModel?.sections.count ?? 0 }
         
     func retrieveData(complition: (() -> Void)?)
     {
+        guard libraryModel == nil else {
+            complition?()
+            return
+        }
         DataSource.getLibraryData { collectionModel in
-            self.collectionModel = collectionModel
+            self.libraryModel = collectionModel
             complition?()
         }
     }
@@ -27,7 +31,7 @@ class LibraryCollectionPresenter: CollectionPresenterProtocol
             return 0
         }
         
-        return self.collectionModel?.sections[section].sectionItems.count ?? 0
+        return self.libraryModel?.sections[section].sectionItems.count ?? 0
     }
     
     func item(for index: CollectionIndex) -> CollectionSectionItemModelProtocol?
@@ -40,7 +44,7 @@ class LibraryCollectionPresenter: CollectionPresenterProtocol
             return nil
         }
         
-        guard let item = self.collectionModel?.sections[index.section].sectionItems[index.row] else {
+        guard let item = self.libraryModel?.sections[index.section].sectionItems[index.row] else {
             return nil
         }
         

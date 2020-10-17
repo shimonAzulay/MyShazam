@@ -17,19 +17,16 @@
 		2E7FCBDA2539BB5600C756DA /* CollectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBB92539BB5600C756DA /* CollectionModel.swift */; };
 		2E7FCBDB2539BB5600C756DA /* CollectionViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBBB2539BB5600C756DA /* CollectionViewControllerProtocol.swift */; };
 		2E7FCBDC2539BB5600C756DA /* CollectionViewCellProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBBC2539BB5600C756DA /* CollectionViewCellProtocol.swift */; };
-		2E7FCBDD2539BB5600C756DA /* LibraryCollectionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBBF2539BB5600C756DA /* LibraryCollectionPresenter.swift */; };
 		2E7FCBDE2539BB5600C756DA /* ActionItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBC12539BB5600C756DA /* ActionItem.swift */; };
 		2E7FCBDF2539BB5600C756DA /* ShazamItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBC22539BB5600C756DA /* ShazamItem.swift */; };
 		2E7FCBE02539BB5600C756DA /* LibraryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBC32539BB5600C756DA /* LibraryItem.swift */; };
-		2E7FCBE12539BB5600C756DA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBC42539BB5600C756DA /* DataSource.swift */; };
 		2E7FCBE22539BB5600C756DA /* LibraryItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCBC72539BB5600C756DA /* LibraryItemCell.xib */; };
 		2E7FCBE32539BB5600C756DA /* ActionItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCBC82539BB5600C756DA /* ActionItemCell.xib */; };
 		2E7FCBE42539BB5600C756DA /* ShazamItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBC92539BB5600C756DA /* ShazamItemCell.swift */; };
 		2E7FCBE52539BB5600C756DA /* ActionItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBCA2539BB5600C756DA /* ActionItemCell.swift */; };
 		2E7FCBE62539BB5600C756DA /* ShazamItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCBCB2539BB5600C756DA /* ShazamItemCell.xib */; };
 		2E7FCBE72539BB5600C756DA /* LibraryItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBCC2539BB5600C756DA /* LibraryItemCell.swift */; };
-		2E7FCBE82539BB5600C756DA /* LibraryCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBCD2539BB5600C756DA /* LibraryCollectionViewController.swift */; };
-		2E7FCBEA2539BB5600C756DA /* PagerPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBD12539BB5600C756DA /* PagerPresenterProtocol.swift */; };
+		2E7FCBEA2539BB5600C756DA /* PagerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBD12539BB5600C756DA /* PagerPresenter.swift */; };
 		2E7FCBEB2539BB5600C756DA /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBD32539BB5600C756DA /* PageModel.swift */; };
 		2E7FCBF12539C58400C756DA /* PageViewControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBF02539C58400C756DA /* PageViewControllerProtocol.swift */; };
 		2E7FCBFB2539E22500C756DA /* ShazamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCBFA2539E22500C756DA /* ShazamViewController.swift */; };
@@ -45,7 +42,10 @@
 		2E7FCC2E253AC9AE00C756DA /* ChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCC2D253AC9AE00C756DA /* ChartCell.xib */; };
 		2E7FCC31253ACF2400C756DA /* AroundTheWorldChartsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCC30253ACF2400C756DA /* AroundTheWorldChartsCell.xib */; };
 		2E7FCC34253AD18300C756DA /* AroundTheWorldChartsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC33253AD18300C756DA /* AroundTheWorldChartsItem.swift */; };
-		2E7FCC38253AD1AC00C756DA /* ChartsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC37253AD1AC00C756DA /* ChartsItem.swift */; };
+		2E7FCC44253B01CD00C756DA /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC43253B01CD00C756DA /* DataSource.swift */; };
+		2E7FCC4A253B151B00C756DA /* LibraryPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC49253B151B00C756DA /* LibraryPresenter.swift */; };
+		2E7FCC4F253B156800C756DA /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC4E253B156800C756DA /* LibraryViewController.swift */; };
+		2E7FCC55253B15A300C756DA /* ChartItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC54253B15A300C756DA /* ChartItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,19 +61,16 @@
 		2E7FCBB92539BB5600C756DA /* CollectionModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionModel.swift; sourceTree = "<group>"; };
 		2E7FCBBB2539BB5600C756DA /* CollectionViewControllerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewControllerProtocol.swift; sourceTree = "<group>"; };
 		2E7FCBBC2539BB5600C756DA /* CollectionViewCellProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCellProtocol.swift; sourceTree = "<group>"; };
-		2E7FCBBF2539BB5600C756DA /* LibraryCollectionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryCollectionPresenter.swift; sourceTree = "<group>"; };
 		2E7FCBC12539BB5600C756DA /* ActionItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionItem.swift; sourceTree = "<group>"; };
 		2E7FCBC22539BB5600C756DA /* ShazamItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShazamItem.swift; sourceTree = "<group>"; };
 		2E7FCBC32539BB5600C756DA /* LibraryItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryItem.swift; sourceTree = "<group>"; };
-		2E7FCBC42539BB5600C756DA /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		2E7FCBC72539BB5600C756DA /* LibraryItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LibraryItemCell.xib; sourceTree = "<group>"; };
 		2E7FCBC82539BB5600C756DA /* ActionItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActionItemCell.xib; sourceTree = "<group>"; };
 		2E7FCBC92539BB5600C756DA /* ShazamItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShazamItemCell.swift; sourceTree = "<group>"; };
 		2E7FCBCA2539BB5600C756DA /* ActionItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionItemCell.swift; sourceTree = "<group>"; };
 		2E7FCBCB2539BB5600C756DA /* ShazamItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShazamItemCell.xib; sourceTree = "<group>"; };
 		2E7FCBCC2539BB5600C756DA /* LibraryItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryItemCell.swift; sourceTree = "<group>"; };
-		2E7FCBCD2539BB5600C756DA /* LibraryCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryCollectionViewController.swift; sourceTree = "<group>"; };
-		2E7FCBD12539BB5600C756DA /* PagerPresenterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerPresenterProtocol.swift; sourceTree = "<group>"; };
+		2E7FCBD12539BB5600C756DA /* PagerPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagerPresenter.swift; sourceTree = "<group>"; };
 		2E7FCBD32539BB5600C756DA /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		2E7FCBF02539C58400C756DA /* PageViewControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewControllerProtocol.swift; sourceTree = "<group>"; };
 		2E7FCBFA2539E22500C756DA /* ShazamViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShazamViewController.swift; sourceTree = "<group>"; };
@@ -89,7 +86,10 @@
 		2E7FCC2D253AC9AE00C756DA /* ChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartCell.xib; sourceTree = "<group>"; };
 		2E7FCC30253ACF2400C756DA /* AroundTheWorldChartsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AroundTheWorldChartsCell.xib; sourceTree = "<group>"; };
 		2E7FCC33253AD18300C756DA /* AroundTheWorldChartsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundTheWorldChartsItem.swift; sourceTree = "<group>"; };
-		2E7FCC37253AD1AC00C756DA /* ChartsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsItem.swift; sourceTree = "<group>"; };
+		2E7FCC43253B01CD00C756DA /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		2E7FCC49253B151B00C756DA /* LibraryPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryPresenter.swift; sourceTree = "<group>"; };
+		2E7FCC4E253B156800C756DA /* LibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		2E7FCC54253B15A300C756DA /* ChartItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChartItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +122,7 @@
 		2E7FCB0C2539B85D00C756DA /* MyShazam */ = {
 			isa = PBXGroup;
 			children = (
+				2E7FCC3F253B018600C756DA /* Data Source */,
 				2E7FCC18253A3E0800C756DA /* Charts */,
 				2E7FCBF62539E19600C756DA /* Shazam */,
 				2E7FCBF52539DA2800C756DA /* Coordinators */,
@@ -177,7 +178,6 @@
 		2E7FCBBD2539BB5600C756DA /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				2E7FCBC42539BB5600C756DA /* DataSource.swift */,
 				2E7FCBBE2539BB5600C756DA /* Presenter */,
 				2E7FCBC02539BB5600C756DA /* Models */,
 				2E7FCBC52539BB5600C756DA /* Views */,
@@ -188,7 +188,7 @@
 		2E7FCBBE2539BB5600C756DA /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				2E7FCBBF2539BB5600C756DA /* LibraryCollectionPresenter.swift */,
+				2E7FCC49253B151B00C756DA /* LibraryPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -206,9 +206,9 @@
 		2E7FCBC52539BB5600C756DA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2E7FCBC62539BB5600C756DA /* Cells */,
-				2E7FCBCD2539BB5600C756DA /* LibraryCollectionViewController.swift */,
 				2E7FCC15253A367A00C756DA /* LibraryStoryboard.storyboard */,
+				2E7FCC4E253B156800C756DA /* LibraryViewController.swift */,
+				2E7FCBC62539BB5600C756DA /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -239,7 +239,7 @@
 		2E7FCBD02539BB5600C756DA /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				2E7FCBD12539BB5600C756DA /* PagerPresenterProtocol.swift */,
+				2E7FCBD12539BB5600C756DA /* PagerPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -323,8 +323,8 @@
 		2E7FCC1A253A3E1A00C756DA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2E7FCC54253B15A300C756DA /* ChartItem.swift */,
 				2E7FCC33253AD18300C756DA /* AroundTheWorldChartsItem.swift */,
-				2E7FCC37253AD1AC00C756DA /* ChartsItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -348,6 +348,14 @@
 				2E7FCC2D253AC9AE00C756DA /* ChartCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		2E7FCC3F253B018600C756DA /* Data Source */ = {
+			isa = PBXGroup;
+			children = (
+				2E7FCC43253B01CD00C756DA /* DataSource.swift */,
+			);
+			path = "Data Source";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,33 +437,33 @@
 			files = (
 				2E7FCBE42539BB5600C756DA /* ShazamItemCell.swift in Sources */,
 				2E7FCBE02539BB5600C756DA /* LibraryItem.swift in Sources */,
-				2E7FCBEA2539BB5600C756DA /* PagerPresenterProtocol.swift in Sources */,
+				2E7FCBEA2539BB5600C756DA /* PagerPresenter.swift in Sources */,
 				2E7FCC23253A401C00C756DA /* ChartsPresenter.swift in Sources */,
 				2E7FCBDC2539BB5600C756DA /* CollectionViewCellProtocol.swift in Sources */,
+				2E7FCC4F253B156800C756DA /* LibraryViewController.swift in Sources */,
 				2E7FCBD72539BB5600C756DA /* CollectionPresenterProtocol.swift in Sources */,
 				2E7FCBFB2539E22500C756DA /* ShazamViewController.swift in Sources */,
 				2E7FCBE72539BB5600C756DA /* LibraryItemCell.swift in Sources */,
-				2E7FCBE12539BB5600C756DA /* DataSource.swift in Sources */,
-				2E7FCBDD2539BB5600C756DA /* LibraryCollectionPresenter.swift in Sources */,
 				2E7FCC20253A3F2000C756DA /* ChartsViewController.swift in Sources */,
 				2E7FCBDB2539BB5600C756DA /* CollectionViewControllerProtocol.swift in Sources */,
 				2E7FCC2B253AC99D00C756DA /* ChartCell.swift in Sources */,
+				2E7FCC4A253B151B00C756DA /* LibraryPresenter.swift in Sources */,
 				2E7FCBE52539BB5600C756DA /* ActionItemCell.swift in Sources */,
 				2E7FCBDF2539BB5600C756DA /* ShazamItem.swift in Sources */,
 				2E7FCBDE2539BB5600C756DA /* ActionItem.swift in Sources */,
 				2E7FCBD82539BB5600C756DA /* CollectionSectionModel.swift in Sources */,
-				2E7FCBE82539BB5600C756DA /* LibraryCollectionViewController.swift in Sources */,
 				2E7FCBD92539BB5600C756DA /* CollectionSectionItemModelProtocol.swift in Sources */,
 				2E7FCC27253AC98100C756DA /* AroundTheWorldChartsCell.swift in Sources */,
 				2E7FCBEB2539BB5600C756DA /* PageModel.swift in Sources */,
 				2E7FCB0E2539B85D00C756DA /* AppDelegate.swift in Sources */,
 				2E7FCB102539B85D00C756DA /* SceneDelegate.swift in Sources */,
+				2E7FCC55253B15A300C756DA /* ChartItem.swift in Sources */,
 				2E7FCC34253AD18300C756DA /* AroundTheWorldChartsItem.swift in Sources */,
 				2E7FCC07253A1BA100C756DA /* ShazamPresenter.swift in Sources */,
 				2E7FCBDA2539BB5600C756DA /* CollectionModel.swift in Sources */,
+				2E7FCC44253B01CD00C756DA /* DataSource.swift in Sources */,
 				2E7FCC03253A177100C756DA /* PagerViewController.swift in Sources */,
 				2E7FCBF12539C58400C756DA /* PageViewControllerProtocol.swift in Sources */,
-				2E7FCC38253AD1AC00C756DA /* ChartsItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

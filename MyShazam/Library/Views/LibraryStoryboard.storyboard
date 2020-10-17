@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Library Collection View Controller-->
+        <!--Library View Controller-->
         <scene sceneID="IGp-kP-q4a">
             <objects>
-                <viewController storyboardIdentifier="LibraryCollectionViewController" id="u2Z-GD-SF6" customClass="LibraryCollectionViewController" customModule="MyShazam" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LibraryCollectionViewController" id="u2Z-GD-SF6" customClass="LibraryViewController" customModule="MyShazam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bya-ip-JT6">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

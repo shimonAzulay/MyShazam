@@ -1,5 +1,5 @@
 //
-//  PagerPresenterProtocol.swift
+//  PagerPresenter.swift
 //  PlayingWithUIKit
 //
 //  Created by Shimon Azulay on 16/10/2020.
