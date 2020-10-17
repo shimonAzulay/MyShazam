@@ -142,7 +142,8 @@ extension PagerViewController
             vc.pagerViewControllerDelegate = self
             return vc
         default:
-            guard let vc = UIStoryboard(name: "ChartsStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ChartsViewController") as? PageViewControllerProtocol else { return nil }
+            guard let vc = UIStoryboard(name: "ChartsStoryboard", bundle: nil).instantiateViewController(withIdentifier: "ChartsViewController") as? ChartsViewController else { return nil }
+            vc.chartsPresenter = ChartsPresenter()
             vc.model = pageModel
             vc.pagerViewControllerDelegate = self
             return vc

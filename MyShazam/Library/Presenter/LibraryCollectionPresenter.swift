@@ -15,7 +15,7 @@ class LibraryCollectionPresenter: CollectionPresenterProtocol
         
     func retrieveData(complition: (() -> Void)?)
     {
-        DataSource.getData { collectionModel in
+        DataSource.getLibraryData { collectionModel in
             self.collectionModel = collectionModel
             complition?()
         }

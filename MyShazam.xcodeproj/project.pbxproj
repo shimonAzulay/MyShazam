@@ -40,6 +40,12 @@
 		2E7FCC1D253A3E5200C756DA /* ChartsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCC1C253A3E5200C756DA /* ChartsStoryboard.storyboard */; };
 		2E7FCC20253A3F2000C756DA /* ChartsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC1F253A3F2000C756DA /* ChartsViewController.swift */; };
 		2E7FCC23253A401C00C756DA /* ChartsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC22253A401C00C756DA /* ChartsPresenter.swift */; };
+		2E7FCC27253AC98100C756DA /* AroundTheWorldChartsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC26253AC98100C756DA /* AroundTheWorldChartsCell.swift */; };
+		2E7FCC2B253AC99D00C756DA /* ChartCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC2A253AC99D00C756DA /* ChartCell.swift */; };
+		2E7FCC2E253AC9AE00C756DA /* ChartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCC2D253AC9AE00C756DA /* ChartCell.xib */; };
+		2E7FCC31253ACF2400C756DA /* AroundTheWorldChartsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCC30253ACF2400C756DA /* AroundTheWorldChartsCell.xib */; };
+		2E7FCC34253AD18300C756DA /* AroundTheWorldChartsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC33253AD18300C756DA /* AroundTheWorldChartsItem.swift */; };
+		2E7FCC38253AD1AC00C756DA /* ChartsItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCC37253AD1AC00C756DA /* ChartsItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +84,12 @@
 		2E7FCC1C253A3E5200C756DA /* ChartsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ChartsStoryboard.storyboard; sourceTree = "<group>"; };
 		2E7FCC1F253A3F2000C756DA /* ChartsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsViewController.swift; sourceTree = "<group>"; };
 		2E7FCC22253A401C00C756DA /* ChartsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsPresenter.swift; sourceTree = "<group>"; };
+		2E7FCC26253AC98100C756DA /* AroundTheWorldChartsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundTheWorldChartsCell.swift; sourceTree = "<group>"; };
+		2E7FCC2A253AC99D00C756DA /* ChartCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartCell.swift; sourceTree = "<group>"; };
+		2E7FCC2D253AC9AE00C756DA /* ChartCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChartCell.xib; sourceTree = "<group>"; };
+		2E7FCC30253ACF2400C756DA /* AroundTheWorldChartsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AroundTheWorldChartsCell.xib; sourceTree = "<group>"; };
+		2E7FCC33253AD18300C756DA /* AroundTheWorldChartsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AroundTheWorldChartsItem.swift; sourceTree = "<group>"; };
+		2E7FCC37253AD1AC00C756DA /* ChartsItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,11 +217,11 @@
 			isa = PBXGroup;
 			children = (
 				2E7FCBC72539BB5600C756DA /* LibraryItemCell.xib */,
-				2E7FCBC82539BB5600C756DA /* ActionItemCell.xib */,
-				2E7FCBC92539BB5600C756DA /* ShazamItemCell.swift */,
-				2E7FCBCA2539BB5600C756DA /* ActionItemCell.swift */,
-				2E7FCBCB2539BB5600C756DA /* ShazamItemCell.xib */,
 				2E7FCBCC2539BB5600C756DA /* LibraryItemCell.swift */,
+				2E7FCBC82539BB5600C756DA /* ActionItemCell.xib */,
+				2E7FCBCA2539BB5600C756DA /* ActionItemCell.swift */,
+				2E7FCBC92539BB5600C756DA /* ShazamItemCell.swift */,
+				2E7FCBCB2539BB5600C756DA /* ShazamItemCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -311,6 +323,8 @@
 		2E7FCC1A253A3E1A00C756DA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2E7FCC33253AD18300C756DA /* AroundTheWorldChartsItem.swift */,
+				2E7FCC37253AD1AC00C756DA /* ChartsItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -318,10 +332,22 @@
 		2E7FCC1B253A3E2300C756DA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				2E7FCC25253AC8EE00C756DA /* Cells */,
 				2E7FCC1C253A3E5200C756DA /* ChartsStoryboard.storyboard */,
 				2E7FCC1F253A3F2000C756DA /* ChartsViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2E7FCC25253AC8EE00C756DA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2E7FCC26253AC98100C756DA /* AroundTheWorldChartsCell.swift */,
+				2E7FCC30253ACF2400C756DA /* AroundTheWorldChartsCell.xib */,
+				2E7FCC2A253AC99D00C756DA /* ChartCell.swift */,
+				2E7FCC2D253AC9AE00C756DA /* ChartCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,9 +411,11 @@
 				2E7FCBE32539BB5600C756DA /* ActionItemCell.xib in Resources */,
 				2E7FCC16253A367A00C756DA /* LibraryStoryboard.storyboard in Resources */,
 				2E7FCB1A2539B86000C756DA /* LaunchScreen.storyboard in Resources */,
+				2E7FCC2E253AC9AE00C756DA /* ChartCell.xib in Resources */,
 				2E7FCBE22539BB5600C756DA /* LibraryItemCell.xib in Resources */,
 				2E7FCBE62539BB5600C756DA /* ShazamItemCell.xib in Resources */,
 				2E7FCB172539B86000C756DA /* Assets.xcassets in Resources */,
+				2E7FCC31253ACF2400C756DA /* AroundTheWorldChartsCell.xib in Resources */,
 				2E7FCBFF2539E28B00C756DA /* ShazamStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -411,19 +439,23 @@
 				2E7FCBDD2539BB5600C756DA /* LibraryCollectionPresenter.swift in Sources */,
 				2E7FCC20253A3F2000C756DA /* ChartsViewController.swift in Sources */,
 				2E7FCBDB2539BB5600C756DA /* CollectionViewControllerProtocol.swift in Sources */,
+				2E7FCC2B253AC99D00C756DA /* ChartCell.swift in Sources */,
 				2E7FCBE52539BB5600C756DA /* ActionItemCell.swift in Sources */,
 				2E7FCBDF2539BB5600C756DA /* ShazamItem.swift in Sources */,
 				2E7FCBDE2539BB5600C756DA /* ActionItem.swift in Sources */,
 				2E7FCBD82539BB5600C756DA /* CollectionSectionModel.swift in Sources */,
 				2E7FCBE82539BB5600C756DA /* LibraryCollectionViewController.swift in Sources */,
 				2E7FCBD92539BB5600C756DA /* CollectionSectionItemModelProtocol.swift in Sources */,
+				2E7FCC27253AC98100C756DA /* AroundTheWorldChartsCell.swift in Sources */,
 				2E7FCBEB2539BB5600C756DA /* PageModel.swift in Sources */,
 				2E7FCB0E2539B85D00C756DA /* AppDelegate.swift in Sources */,
 				2E7FCB102539B85D00C756DA /* SceneDelegate.swift in Sources */,
+				2E7FCC34253AD18300C756DA /* AroundTheWorldChartsItem.swift in Sources */,
 				2E7FCC07253A1BA100C756DA /* ShazamPresenter.swift in Sources */,
 				2E7FCBDA2539BB5600C756DA /* CollectionModel.swift in Sources */,
 				2E7FCC03253A177100C756DA /* PagerViewController.swift in Sources */,
 				2E7FCBF12539C58400C756DA /* PageViewControllerProtocol.swift in Sources */,
+				2E7FCC38253AD1AC00C756DA /* ChartsItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,7 +595,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XUVG47HYN7;
 				INFOPLIST_FILE = MyShazam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -581,7 +615,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XUVG47HYN7;
 				INFOPLIST_FILE = MyShazam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

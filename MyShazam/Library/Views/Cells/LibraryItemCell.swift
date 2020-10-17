@@ -7,16 +7,11 @@
 
 import UIKit
 
-class LibraryItemCell: UICollectionViewListCell
+class LibraryItemCell: UICollectionViewCell
 {
     @IBOutlet weak var icon: UIButton!
     @IBOutlet weak var libraryName: UILabel!
     @IBOutlet weak var libraryItemNum: UILabel!
-        
-    override func willMove(toSuperview newSuperview: UIView?)
-    {
-        self.prepareUI()
-    }
 }
 
 extension LibraryItemCell: CollectionViewCellProtocol
@@ -28,13 +23,5 @@ extension LibraryItemCell: CollectionViewCellProtocol
         }
         
         self.libraryName.text = libraryItemModel.libraryName
-    }
-}
-
-extension LibraryItemCell
-{
-    private func prepareUI()
-    {
-        self.accessories = [.disclosureIndicator()]
     }
 }

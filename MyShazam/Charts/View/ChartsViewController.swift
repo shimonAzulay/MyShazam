@@ -14,11 +14,16 @@ class ChartsViewController: UIViewController, PageViewControllerProtocol
     
     var chartsPresenter: ChartsPresenterProtocol?
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.registerCollectionViewCells()
+        self.configureCollectionView()
+        self.view.bringSubviewToFront(self.activityIndicator)
+        self.retrieveData()
     }
 }
 
@@ -31,6 +36,8 @@ extension ChartsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         
         presenter.retrieveData { [weak self] in
+            self?.activityIndicator.stopAnimating()
+            self?.reloadUI()
         }
     }
     
@@ -57,5 +64,49 @@ extension ChartsViewController: UICollectionViewDelegate, UICollectionViewDataSo
         }
         
         return cell
+    }
+}
+
+extension ChartsViewController
+{
+    private func reloadUI()
+    {
+        DispatchQueue.main.async { [weak self] in
+            self?.collectionView.reloadData()
+        }
+    }
+    
+    private func configureCollectionView()
+    {
+        self.collectionView.delegate = self
+        self.collectionView.dataSource = self
+        self.collectionView.collectionViewLayout = self.createCollectionViewLayout()
+        self.collectionView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+    }
+    
+    private func registerCollectionViewCells()
+    {
+        let libCell = UINib(nibName: "AroundTheWorldChartsCell", bundle: nil)
+        self.collectionView.register(libCell, forCellWithReuseIdentifier: "AroundTheWorldChartsItemCell")
+        let recentCell = UINib(nibName: "ChartCell", bundle: nil)
+        self.collectionView.register(recentCell, forCellWithReuseIdentifier: "ChartsItemCell")
+    }
+    
+    private func createCollectionViewLayout() -> UICollectionViewLayout
+    {
+        let layout = UICollectionViewCompositionalLayout { sectionIndex, layoutEnvironment in
+            
+            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            let groupHeight = sectionIndex == 0 ? NSCollectionLayoutDimension.estimated(200) : NSCollectionLayoutDimension.estimated(350)
+            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: groupHeight)
+            let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
+            
+            let section = NSCollectionLayoutSection(group: group)
+            
+            return section
+        }
+        return layout
     }
 }

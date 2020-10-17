@@ -74,14 +74,6 @@ extension LibraryCollectionViewController: UICollectionViewDataSource, UICollect
     }
 }
 
-extension LibraryCollectionViewController
-{
-    func loadPageData()
-    {
-        self.retrieveData()
-    }
-}
-
 // MARK: UI helpers
 extension LibraryCollectionViewController {
     
