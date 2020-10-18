@@ -7,6 +7,17 @@
 
 import UIKit
 
-class AroundTheWorldChartsCell: UICollectionViewCell {
+class AroundTheWorldChartsCell: UICollectionViewCell {}
+
+extension AroundTheWorldChartsCell: CollectionViewCellProtocol
+{
+    static var nibName: String {
+        "AroundTheWorldChartsCell"
+    }
     
+    static var resuableId: String {
+        "AroundTheWorldChartsCell"
+    }
+    
+    func populateCell(itemModel: CollectionSectionItemModelProtocol) {}
 }

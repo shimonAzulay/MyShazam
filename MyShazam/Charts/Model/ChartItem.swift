@@ -8,7 +8,7 @@
 struct ChartItem: CollectionSectionItemModelProtocol
 {
     var identifier: String {
-        "ChartItemCell"
+        "ChartCell"
     }
     
     var chartName: String

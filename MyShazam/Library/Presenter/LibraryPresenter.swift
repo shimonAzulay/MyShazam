@@ -7,47 +7,23 @@
 
 import Foundation
 
-class LibraryPresenter: CollectionPresenterProtocol
+protocol LibraryPresenterProtocol
+{
+    var title: String { get }
+    func retrieveData(complition: ((_ collectionModel: CollectionModel) -> Void)?)
+}
+
+class LibraryPresenter: LibraryPresenterProtocol
 {
     private var libraryModel: CollectionModel?
     
-    var numberOfSections: Int { self.libraryModel?.sections.count ?? 0 }
+    var title: String = "Library"
         
-    func retrieveData(complition: (() -> Void)?)
+    func retrieveData(complition: ((_ collectionModel: CollectionModel) -> Void)?)
     {
-        guard libraryModel == nil else {
-            complition?()
-            return
-        }
         DataSource.getLibraryData { collectionModel in
             self.libraryModel = collectionModel
-            complition?()
+            complition?(collectionModel)
         }
-    }
-    
-    func numberOfItems(in section: Int) -> Int
-    {
-        guard section < self.numberOfSections else {
-            return 0
-        }
-        
-        return self.libraryModel?.sections[section].sectionItems.count ?? 0
-    }
-    
-    func item(for index: CollectionIndex) -> CollectionSectionItemModelProtocol?
-    {
-        guard index.section < self.numberOfSections else  {
-            return nil
-        }
-        
-        guard index.row < self.numberOfItems(in: index.section) else {
-            return nil
-        }
-        
-        guard let item = self.libraryModel?.sections[index.section].sectionItems[index.row] else {
-            return nil
-        }
-        
-        return item
     }
 }

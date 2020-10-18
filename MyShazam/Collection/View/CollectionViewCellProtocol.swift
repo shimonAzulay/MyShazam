@@ -9,5 +9,7 @@ import Foundation
 
 protocol CollectionViewCellProtocol
 {
+    static var nibName: String { get }
+    static var resuableId: String { get }
     func populateCell(itemModel: CollectionSectionItemModelProtocol)
 }

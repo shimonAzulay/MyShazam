@@ -16,6 +16,14 @@ class LibraryItemCell: UICollectionViewCell
 
 extension LibraryItemCell: CollectionViewCellProtocol
 {
+    static var nibName: String {
+        "LibraryItemCell"
+    }
+    
+    static var resuableId: String {
+        "LibraryCell"
+    }
+    
     func populateCell(itemModel: CollectionSectionItemModelProtocol)
     {
         guard let libraryItemModel = itemModel as? LibraryItem else {

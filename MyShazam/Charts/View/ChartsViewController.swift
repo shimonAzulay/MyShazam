@@ -9,19 +9,23 @@ import UIKit
 
 class ChartsViewController: UIViewController, PageViewControllerProtocol
 {
+    private var collectionModel: CollectionModel?
+    
+    @IBOutlet weak var pageTitle: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     var model: PageModel?
     var pagerViewControllerDelegate: PagerViewControllerDelegate?
     
     var chartsPresenter: ChartsPresenterProtocol?
-    
-    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var collectionView: UICollectionView!
-    
+
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.registerCollectionViewCells()
         self.configureCollectionView()
+        self.configureTitle()
         self.view.bringSubviewToFront(self.activityIndicator)
         self.retrieveData()
     }
@@ -35,7 +39,8 @@ extension ChartsViewController: UICollectionViewDelegate, UICollectionViewDataSo
             return
         }
         
-        presenter.retrieveData { [weak self] in
+        presenter.retrieveData { [weak self] collectionModel in
+            self?.collectionModel = collectionModel
             self?.activityIndicator.stopAnimating()
             self?.reloadUI()
         }
@@ -43,17 +48,17 @@ extension ChartsViewController: UICollectionViewDelegate, UICollectionViewDataSo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return self.chartsPresenter?.numberOfItems(in: section) ?? 0
+        return self.collectionModel?.sections[section].sectionItems.count ?? 0
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int
     {
-        return self.chartsPresenter?.numberOfSections ?? 0
+        return self.collectionModel?.sections.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        guard let itemModel = self.chartsPresenter?.item(for: CollectionIndex(section: indexPath.section, row: indexPath.row)) else {
+        guard let itemModel = self.collectionModel?.sections[indexPath.section].sectionItems[indexPath.row] else {
             return UICollectionViewCell()
         }
         
@@ -76,6 +81,16 @@ extension ChartsViewController
         }
     }
     
+    private func configureTitle()
+    {
+        guard let presenter = self.chartsPresenter else {
+            self.pageTitle.text = ""
+            return
+        }
+        
+        self.pageTitle.text = presenter.title
+    }
+    
     private func configureCollectionView()
     {
         self.collectionView.delegate = self
@@ -86,10 +101,10 @@ extension ChartsViewController
     
     private func registerCollectionViewCells()
     {
-        let libCell = UINib(nibName: "AroundTheWorldChartsCell", bundle: nil)
-        self.collectionView.register(libCell, forCellWithReuseIdentifier: "AroundTheWorldChartsItemCell")
-        let recentCell = UINib(nibName: "ChartCell", bundle: nil)
-        self.collectionView.register(recentCell, forCellWithReuseIdentifier: "ChartItemCell")
+        let aroundTheWorldChartsCell = UINib(nibName: AroundTheWorldChartsCell.nibName, bundle: nil)
+        self.collectionView.register(aroundTheWorldChartsCell, forCellWithReuseIdentifier: AroundTheWorldChartsCell.resuableId)
+        let chartCell = UINib(nibName: ChartCell.nibName, bundle: nil)
+        self.collectionView.register(chartCell, forCellWithReuseIdentifier: ChartCell.resuableId)
     }
     
     private func createCollectionViewLayout() -> UICollectionViewLayout

@@ -19,6 +19,14 @@ class ActionItemCell: UICollectionViewCell
 
 extension ActionItemCell: CollectionViewCellProtocol
 {
+    static var nibName: String {
+        "ActionItemCell"
+    }
+    
+    static var resuableId: String {
+        "ActionItemCell"
+    }
+    
     func populateCell(itemModel: CollectionSectionItemModelProtocol)
     {
         guard let actionItemModel = itemModel as? ActionItem else {

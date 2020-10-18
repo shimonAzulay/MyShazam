@@ -23,7 +23,7 @@ class ShazamViewController: UIViewController, PageViewControllerProtocol
             return
         }
         
-        self.pagerViewControllerDelegate?.moveToPagerAfter(pageModel)
+        self.pagerViewControllerDelegate?.moveToPageAfter(pageModel)
     }
     
     @IBAction func libraryTapped(_ sender: Any)
@@ -32,7 +32,7 @@ class ShazamViewController: UIViewController, PageViewControllerProtocol
             return
         }
         
-        self.pagerViewControllerDelegate?.moveToPagerBefore(pageModel)
+        self.pagerViewControllerDelegate?.moveToPageBefore(pageModel)
     }
 }
 

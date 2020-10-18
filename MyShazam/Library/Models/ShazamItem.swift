@@ -10,7 +10,7 @@ import Foundation
 struct ShazamItem: CollectionSectionItemModelProtocol {
     
     var identifier: String {
-        "ShazamItemCell"
+        "ShazamCell"
     }
     
     //var shazamImage: URL

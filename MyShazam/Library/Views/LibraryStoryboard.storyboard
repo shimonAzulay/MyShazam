@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,22 +14,22 @@
             <objects>
                 <viewController storyboardIdentifier="LibraryCollectionViewController" id="u2Z-GD-SF6" customClass="LibraryViewController" customModule="MyShazam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bya-ip-JT6">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="zaT-RJ-QUN">
-                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                                <color key="color" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2l5-aY-zNK">
-                                <rect key="frame" x="15" y="44" width="57" height="30"/>
+                                <rect key="frame" x="15" y="0.0" width="57" height="30"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
                                     <action selector="settingsTapped:" destination="fUv-gt-5lD" eventType="touchUpInside" id="Jym-dt-IZ5"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Myk-Af-zIB">
-                                <rect key="frame" x="0.0" y="82" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="38" width="414" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="D2X-Ts-ibd">
                                     <size key="itemSize" width="128" height="128"/>
@@ -38,23 +39,33 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lL7-D7-TYK">
+                                <rect key="frame" x="188.66666666666666" y="9" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GOp-gW-i1b"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="zaT-RJ-QUN" firstAttribute="centerY" secondItem="GOp-gW-i1b" secondAttribute="centerY" id="13X-3P-Smm"/>
                             <constraint firstItem="2l5-aY-zNK" firstAttribute="top" secondItem="GOp-gW-i1b" secondAttribute="top" id="Iz1-If-UAc"/>
+                            <constraint firstItem="Myk-Af-zIB" firstAttribute="top" secondItem="lL7-D7-TYK" secondAttribute="bottom" constant="8" symbolic="YES" id="K3O-ew-0n4"/>
+                            <constraint firstItem="lL7-D7-TYK" firstAttribute="centerX" secondItem="GOp-gW-i1b" secondAttribute="centerX" id="Ou5-6o-edk"/>
                             <constraint firstItem="Myk-Af-zIB" firstAttribute="top" secondItem="2l5-aY-zNK" secondAttribute="bottom" constant="8" symbolic="YES" id="Oz7-ZK-gXd"/>
                             <constraint firstItem="Myk-Af-zIB" firstAttribute="centerX" secondItem="GOp-gW-i1b" secondAttribute="centerX" id="a3V-Ia-Mtb"/>
                             <constraint firstItem="zaT-RJ-QUN" firstAttribute="centerX" secondItem="GOp-gW-i1b" secondAttribute="centerX" id="bIh-4w-N7z"/>
                             <constraint firstItem="Myk-Af-zIB" firstAttribute="bottom" secondItem="GOp-gW-i1b" secondAttribute="bottom" constant="34" id="drL-Om-px6"/>
                             <constraint firstItem="Myk-Af-zIB" firstAttribute="width" secondItem="bya-ip-JT6" secondAttribute="width" id="h8r-60-FsD"/>
                             <constraint firstItem="2l5-aY-zNK" firstAttribute="leading" secondItem="GOp-gW-i1b" secondAttribute="leading" constant="15" id="jcc-QT-Fep"/>
+                            <constraint firstItem="lL7-D7-TYK" firstAttribute="top" secondItem="GOp-gW-i1b" secondAttribute="top" constant="9" id="kss-Qg-0aV"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="zaT-RJ-QUN" id="zsb-Gc-15e"/>
                         <outlet property="collectionView" destination="Myk-Af-zIB" id="Yyg-O9-DPw"/>
+                        <outlet property="pageTitle" destination="lL7-D7-TYK" id="475-T9-LyX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faZ-d6-SeO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

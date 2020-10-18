@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,15 +14,15 @@
             <objects>
                 <viewController storyboardIdentifier="ChartsViewController" id="5y7-hO-23s" customClass="ChartsViewController" customModule="MyShazam" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FLO-J8-b3H">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="DRF-IU-swE">
-                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
-                                <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="188.66666666666666" y="349.66666666666669" width="37" height="37"/>
+                                <color key="color" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gCI-Bo-0P1">
-                                <rect key="frame" x="0.0" y="82" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="38" width="414" height="732"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Ijv-Fp-5hD">
                                     <size key="itemSize" width="128" height="128"/>
@@ -31,6 +32,12 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LfK-TD-DBJ">
+                                <rect key="frame" x="189" y="9" width="37" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="219-Fh-MES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -38,14 +45,17 @@
                             <constraint firstItem="gCI-Bo-0P1" firstAttribute="bottom" secondItem="219-Fh-MES" secondAttribute="bottom" constant="34" id="4Yy-l0-eqE"/>
                             <constraint firstItem="gCI-Bo-0P1" firstAttribute="width" secondItem="FLO-J8-b3H" secondAttribute="width" id="5tP-Zl-UQp"/>
                             <constraint firstItem="DRF-IU-swE" firstAttribute="centerY" secondItem="219-Fh-MES" secondAttribute="centerY" id="CIf-ZX-jQg"/>
-                            <constraint firstItem="gCI-Bo-0P1" firstAttribute="top" secondItem="219-Fh-MES" secondAttribute="top" constant="38" id="K3D-W1-pOc"/>
+                            <constraint firstItem="gCI-Bo-0P1" firstAttribute="top" secondItem="LfK-TD-DBJ" secondAttribute="bottom" constant="8" symbolic="YES" id="JnX-mJ-dM0"/>
+                            <constraint firstItem="LfK-TD-DBJ" firstAttribute="centerX" secondItem="219-Fh-MES" secondAttribute="centerX" id="LKS-Iw-qZE"/>
                             <constraint firstItem="DRF-IU-swE" firstAttribute="centerX" secondItem="219-Fh-MES" secondAttribute="centerX" id="nca-Cm-ceh"/>
+                            <constraint firstItem="LfK-TD-DBJ" firstAttribute="top" secondItem="219-Fh-MES" secondAttribute="top" constant="9" id="rjb-mx-Zjm"/>
                             <constraint firstItem="gCI-Bo-0P1" firstAttribute="centerX" secondItem="219-Fh-MES" secondAttribute="centerX" id="sIK-v6-IZJ"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="activityIndicator" destination="DRF-IU-swE" id="gYm-4q-GcM"/>
                         <outlet property="collectionView" destination="gCI-Bo-0P1" id="erP-4p-D91"/>
+                        <outlet property="pageTitle" destination="LfK-TD-DBJ" id="9we-Rc-hcZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="u4d-pY-YAs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

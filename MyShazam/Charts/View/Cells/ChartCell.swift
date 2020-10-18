@@ -33,6 +33,14 @@ class ChartCell: UICollectionViewCell
 
 extension ChartCell: CollectionViewCellProtocol
 {
+    static var nibName: String {
+        "ChartCell"
+    }
+    
+    static var resuableId: String {
+        "ChartCell"
+    }
+    
     func populateCell(itemModel: CollectionSectionItemModelProtocol)
     {
         guard let chartItemModel = itemModel as? ChartItem else {

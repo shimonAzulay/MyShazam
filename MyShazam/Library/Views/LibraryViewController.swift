@@ -9,6 +9,9 @@ import UIKit
 
 class LibraryViewController: UIViewController, PageViewControllerProtocol
 {
+    private var collectionModel: CollectionModel?
+    
+    @IBOutlet weak var pageTitle: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
@@ -16,7 +19,7 @@ class LibraryViewController: UIViewController, PageViewControllerProtocol
     var pagerViewControllerDelegate: PagerViewControllerDelegate?
     
     // MARK: TODO - Create LibraryPesenter
-    var libraryCollectionPresenter: LibraryPresenter?
+    var libraryPresenter: LibraryPresenter?
     
     override func viewDidLoad()
     {
@@ -24,6 +27,7 @@ class LibraryViewController: UIViewController, PageViewControllerProtocol
         
         self.registerCollectionViewCells()
         self.configureCollectionView()
+        self.configureTitle()
         self.view.bringSubviewToFront(self.activityIndicator)
         self.retrieveData()
     }
@@ -38,11 +42,12 @@ extension LibraryViewController: UICollectionViewDataSource, UICollectionViewDel
 {
     private func retrieveData()
     {
-        guard let presenter = self.libraryCollectionPresenter else {
+        guard let presenter = self.libraryPresenter else {
             return
         }
         
-        presenter.retrieveData { [weak self] in
+        presenter.retrieveData { [weak self] collectionModel in
+            self?.collectionModel = collectionModel
             self?.activityIndicator.stopAnimating()
             self?.reloadUI()
         }
@@ -50,23 +55,24 @@ extension LibraryViewController: UICollectionViewDataSource, UICollectionViewDel
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return self.libraryCollectionPresenter?.numberOfItems(in: section) ?? 0
+        return self.collectionModel?.sections[section].sectionItems.count ?? 0
     }
     
     func numberOfSections(in collectionView: UICollectionView) -> Int
     {
-        return self.libraryCollectionPresenter?.numberOfSections ?? 0
+        return self.collectionModel?.sections.count ?? 0
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     {
-        guard let itemModel = self.libraryCollectionPresenter?.item(for: CollectionIndex(section: indexPath.section, row: indexPath.row)) else {
+        guard let itemModel = self.collectionModel?.sections[indexPath.section].sectionItems[indexPath.row] else {
             return UICollectionViewCell()
         }
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: itemModel.identifier, for: indexPath)
         
-        if let collectionViewCell = cell as? CollectionViewCellProtocol {
+        if let collectionViewCell = cell as? CollectionViewCellProtocol
+        {
             collectionViewCell.populateCell(itemModel: itemModel)
         }
         
@@ -84,6 +90,16 @@ extension LibraryViewController {
         }
     }
     
+    private func configureTitle()
+    {
+        guard let presenter = self.libraryPresenter else {
+            self.pageTitle.text = ""
+            return
+        }
+        
+        self.pageTitle.text = presenter.title
+    }
+    
     private func configureCollectionView() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
@@ -92,12 +108,12 @@ extension LibraryViewController {
     }
     
     private func registerCollectionViewCells() {
-        let libCell = UINib(nibName: "LibraryItemCell", bundle: nil)
-        self.collectionView.register(libCell, forCellWithReuseIdentifier: "LibraryItemCell")
-        let recentCell = UINib(nibName: "ShazamItemCell", bundle: nil)
-        self.collectionView.register(recentCell, forCellWithReuseIdentifier: "ShazamItemCell")
-        let seeAllCell = UINib(nibName: "ActionItemCell", bundle: nil)
-        self.collectionView.register(seeAllCell, forCellWithReuseIdentifier: "ActionItemCell")
+        let libCell = UINib(nibName: LibraryItemCell.nibName, bundle: nil)
+        self.collectionView.register(libCell, forCellWithReuseIdentifier: LibraryItemCell.resuableId)
+        let recentCell = UINib(nibName: ShazamItemCell.nibName, bundle: nil)
+        self.collectionView.register(recentCell, forCellWithReuseIdentifier: ShazamItemCell.resuableId)
+        let seeAllCell = UINib(nibName: ActionItemCell.nibName, bundle: nil)
+        self.collectionView.register(seeAllCell, forCellWithReuseIdentifier: ActionItemCell.resuableId)
     }
     
     private func createCollectionViewLayout() -> UICollectionViewLayout {

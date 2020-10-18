@@ -8,7 +8,7 @@
 struct AroundTheWorldChartsItem: CollectionSectionItemModelProtocol
 {
     var identifier: String {
-        "AroundTheWorldChartsItemCell"
+        "AroundTheWorldChartsCell"
     }
 }
 

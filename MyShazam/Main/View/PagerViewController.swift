@@ -9,14 +9,31 @@ import UIKit
 
 protocol PagerViewControllerDelegate
 {
-    func moveToPagerAfter(_ page: PageModel)
-    func moveToPagerBefore(_ page: PageModel)
+    func moveToPageAfter(_ page: PageModel)
+    func moveToPageBefore(_ page: PageModel)
+}
+
+protocol PageViewControllerProtocol: UIViewController
+{
+    var model: PageModel? { get set }
+    var pagerViewControllerDelegate: PagerViewControllerDelegate? { get set }
 }
 
 class PagerViewController: UIPageViewController
 {
     var pagerPresenter: PagerPresenterProtocol?
-
+    
+    init(pagerPresenter: PagerPresenterProtocol, transitionStyle style: UIPageViewController.TransitionStyle, navigationOrientation: UIPageViewController.NavigationOrientation, options: [UIPageViewController.OptionsKey : Any]? = nil)
+    {
+        self.pagerPresenter = pagerPresenter
+        super.init(transitionStyle: style, navigationOrientation: navigationOrientation, options: options)
+    }
+    
+    required init?(coder: NSCoder)
+    {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad()
     {
         self.delegate = self
@@ -94,7 +111,7 @@ extension PagerViewController: UIPageViewControllerDataSource, UIPageViewControl
 
 extension PagerViewController: PagerViewControllerDelegate
 {
-    func moveToPagerAfter(_ page: PageModel)
+    func moveToPageAfter(_ page: PageModel)
     {
         guard let pageAfter = self.pagerPresenter?.pageAfter(page) else {
             return
@@ -108,7 +125,7 @@ extension PagerViewController: PagerViewControllerDelegate
 
     }
     
-    func moveToPagerBefore(_ page: PageModel)
+    func moveToPageBefore(_ page: PageModel)
     {
         guard let pageBefore = self.pagerPresenter?.pageBefore(page) else {
             return
@@ -132,7 +149,7 @@ extension PagerViewController
         switch pageModel.index {
         case 0:
             guard let vc = UIStoryboard(name: "LibraryStoryboard", bundle: nil).instantiateViewController(withIdentifier: "LibraryCollectionViewController") as? LibraryViewController else { return nil }
-            vc.libraryCollectionPresenter = LibraryPresenter()
+            vc.libraryPresenter = LibraryPresenter()
             vc.model = pageModel
             vc.pagerViewControllerDelegate = self
             return vc

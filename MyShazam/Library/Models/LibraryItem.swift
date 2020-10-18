@@ -9,7 +9,7 @@ import Foundation
 struct LibraryItem: CollectionSectionItemModelProtocol
 {
     var identifier: String {
-        "LibraryItemCell"
+        "LibraryCell"
     }
     
     //var libraryIcon: URL

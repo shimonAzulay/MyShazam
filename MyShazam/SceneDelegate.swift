@@ -17,8 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let mainAppController = PagerViewController(transitionStyle: .scroll, navigationOrientation: .horizontal)
-        mainAppController.pagerPresenter = PagerPresenter(pages: [PageModel(index: 0), PageModel(index: 1), PageModel(index: 2)])
+        let pagerPresenter = PagerPresenter(pages: [PageModel(index: 0), PageModel(index: 1), PageModel(index: 2)])
+        let mainAppController = PagerViewController(pagerPresenter: pagerPresenter, transitionStyle: .scroll, navigationOrientation: .horizontal)
         self.window = UIWindow(windowScene: windowScene)
         self.window?.rootViewController = mainAppController
         self.window?.makeKeyAndVisible()

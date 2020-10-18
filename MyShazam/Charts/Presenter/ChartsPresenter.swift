@@ -7,55 +7,21 @@
 
 protocol ChartsPresenterProtocol
 {
-    var numberOfSections: Int { get }
-    
-    func retrieveData(complition: (() -> Void)?)
-    func numberOfItems(in section: Int) -> Int
-    func item(for index: CollectionIndex) -> CollectionSectionItemModelProtocol?
+    var title: String { get }
+    func retrieveData(complition: ((_ collectionModel: CollectionModel) -> Void)?)
 }
 
 class ChartsPresenter: ChartsPresenterProtocol
 {
     private var chartsModel: CollectionModel?
     
-    var numberOfSections: Int { self.chartsModel?.sections.count ?? 0 }
+    var title: String = "Charts"
     
-    func retrieveData(complition: (() -> Void)?)
+    func retrieveData(complition: ((_ collectionModel: CollectionModel) -> Void)?)
     {
-        guard chartsModel == nil else {
-            complition?()
-            return
-        }
-        
         DataSource.getChartsData { collectionModel in
             self.chartsModel = collectionModel
-            complition?()
+            complition?(collectionModel)
         }
-    }
-    
-    func numberOfItems(in section: Int) -> Int
-    {
-        guard section < self.numberOfSections else {
-            return 0
-        }
-        
-        return self.chartsModel?.sections[section].sectionItems.count ?? 0
-    }
-    
-    func item(for index: CollectionIndex) -> CollectionSectionItemModelProtocol?
-    {
-        guard index.section < self.numberOfSections else  {
-            return nil
-        }
-        
-        guard index.row < self.numberOfItems(in: index.section) else {
-            return nil
-        }
-        
-        guard let item = self.chartsModel?.sections[index.section].sectionItems[index.row] else {
-            return nil
-        }
-        
-        return item
     }
 }

@@ -21,6 +21,14 @@ class ShazamItemCell: UICollectionViewCell
 
 extension ShazamItemCell: CollectionViewCellProtocol
 {
+    static var nibName: String {
+        "ShazamItemCell"
+    }
+    
+    static var resuableId: String {
+        "ShazamCell"
+    }
+    
     func populateCell(itemModel: CollectionSectionItemModelProtocol)
     {
         guard let shazamItemModel = itemModel as? ShazamItem else {

@@ -35,7 +35,6 @@
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
                     </imageView>
                 </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstItem="tnZ-Iy-1IR" firstAttribute="width" secondItem="WuO-4b-TwQ" secondAttribute="width" id="0Cm-eX-3aF"/>
                     <constraint firstItem="tnZ-Iy-1IR" firstAttribute="centerX" secondItem="WuO-4b-TwQ" secondAttribute="centerX" id="0Ry-Mi-oFc"/>
