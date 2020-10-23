@@ -34,6 +34,10 @@ class LibraryViewController: UIViewController, PageViewControllerProtocol
     
     @IBAction func settingsTapped(_ sender: Any)
     {
+        let storyboard = UIStoryboard(name: "Settings", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SettingsVC") as? SettingsViewController else { return }
+        vc.settingsPresenter = SettingsPresenter()
+        self.show(vc, sender: nil)
     }
 }
 

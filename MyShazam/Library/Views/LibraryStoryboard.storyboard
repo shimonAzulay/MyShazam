@@ -26,6 +26,7 @@
                                 <state key="normal" title="Settings"/>
                                 <connections>
                                     <action selector="settingsTapped:" destination="fUv-gt-5lD" eventType="touchUpInside" id="Jym-dt-IZ5"/>
+                                    <action selector="settingsTapped:" destination="u2Z-GD-SF6" eventType="touchUpInside" id="X51-PV-KCT"/>
                                 </connections>
                             </button>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Myk-Af-zIB">

@@ -27,7 +27,8 @@ class ChartCell: UICollectionViewCell
     
     override func willMove(toSuperview newSuperview: UIView?)
     {
-        prepareUI()
+        super.willMove(toSuperview: newSuperview)
+        self.prepareUI()
     }
 }
 

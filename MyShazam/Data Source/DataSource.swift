@@ -38,4 +38,16 @@ struct DataSource {
             callBack(collectionModel)
         }
     }
+    
+    static func getSettingsData() -> CollectionModel
+    {
+        let streamingItems = StreamingModel.createData()
+        let preferenceItems = PreferenceModel.createData()
+        
+        let sections = [CollectionSectionModel(sectionName: "Streaming", sectionItems: streamingItems),
+                       CollectionSectionModel(sectionName: "Perferences", sectionItems: preferenceItems)]
+        
+        return CollectionModel(sections: sections)
+        
+    }
 }

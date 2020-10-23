@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2E0888502543565A0022A8C3 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E08884F2543565A0022A8C3 /* Settings.storyboard */; };
+		2E088853254357970022A8C3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088852254357970022A8C3 /* SettingsViewController.swift */; };
+		2E088857254358EF0022A8C3 /* StreamingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E088856254358EF0022A8C3 /* StreamingCell.xib */; };
+		2E08885E25435A8F0022A8C3 /* StreamingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E08885D25435A8F0022A8C3 /* StreamingCell.swift */; };
+		2E08886125435C8B0022A8C3 /* PreferenceCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2E08886025435C8B0022A8C3 /* PreferenceCell.xib */; };
+		2E08886425435D780022A8C3 /* PreferenceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E08886325435D780022A8C3 /* PreferenceCell.swift */; };
+		2E088868254361C30022A8C3 /* PerferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088867254361C30022A8C3 /* PerferenceModel.swift */; };
+		2E08886C254362550022A8C3 /* StreamingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E08886B254362550022A8C3 /* StreamingModel.swift */; };
+		2E088875254363930022A8C3 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E088874254363930022A8C3 /* SettingsPresenter.swift */; };
 		2E7FCB0E2539B85D00C756DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCB0D2539B85D00C756DA /* AppDelegate.swift */; };
 		2E7FCB102539B85D00C756DA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7FCB0F2539B85D00C756DA /* SceneDelegate.swift */; };
 		2E7FCB172539B86000C756DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E7FCB162539B86000C756DA /* Assets.xcassets */; };
@@ -46,6 +55,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E08884F2543565A0022A8C3 /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		2E088852254357970022A8C3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		2E088856254358EF0022A8C3 /* StreamingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StreamingCell.xib; sourceTree = "<group>"; };
+		2E08885D25435A8F0022A8C3 /* StreamingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StreamingCell.swift; sourceTree = "<group>"; };
+		2E08886025435C8B0022A8C3 /* PreferenceCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PreferenceCell.xib; sourceTree = "<group>"; };
+		2E08886325435D780022A8C3 /* PreferenceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferenceCell.swift; sourceTree = "<group>"; };
+		2E088867254361C30022A8C3 /* PerferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerferenceModel.swift; sourceTree = "<group>"; };
+		2E08886B254362550022A8C3 /* StreamingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingModel.swift; sourceTree = "<group>"; };
+		2E088874254363930022A8C3 /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		2E7FCB0A2539B85D00C756DA /* MyShazam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyShazam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E7FCB0D2539B85D00C756DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E7FCB0F2539B85D00C756DA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +115,54 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2E08884D254356180022A8C3 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2E088871254363010022A8C3 /* Presenter */,
+				2E0888662543619E0022A8C3 /* Model */,
+				2E08884E254356210022A8C3 /* View */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2E08884E254356210022A8C3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2E088855254358C80022A8C3 /* Cells */,
+				2E08884F2543565A0022A8C3 /* Settings.storyboard */,
+				2E088852254357970022A8C3 /* SettingsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2E088855254358C80022A8C3 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2E08885D25435A8F0022A8C3 /* StreamingCell.swift */,
+				2E088856254358EF0022A8C3 /* StreamingCell.xib */,
+				2E08886025435C8B0022A8C3 /* PreferenceCell.xib */,
+				2E08886325435D780022A8C3 /* PreferenceCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2E0888662543619E0022A8C3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E088867254361C30022A8C3 /* PerferenceModel.swift */,
+				2E08886B254362550022A8C3 /* StreamingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2E088871254363010022A8C3 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				2E088874254363930022A8C3 /* SettingsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		2E7FCB012539B85D00C756DA = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +182,7 @@
 		2E7FCB0C2539B85D00C756DA /* MyShazam */ = {
 			isa = PBXGroup;
 			children = (
+				2E08884D254356180022A8C3 /* Settings */,
 				2E7FCC3F253B018600C756DA /* Data Source */,
 				2E7FCC18253A3E0800C756DA /* Charts */,
 				2E7FCBF62539E19600C756DA /* Shazam */,
@@ -400,11 +467,14 @@
 			files = (
 				2E7FCC1D253A3E5200C756DA /* ChartsStoryboard.storyboard in Resources */,
 				2E7FCBE32539BB5600C756DA /* ActionItemCell.xib in Resources */,
+				2E0888502543565A0022A8C3 /* Settings.storyboard in Resources */,
 				2E7FCC16253A367A00C756DA /* LibraryStoryboard.storyboard in Resources */,
 				2E7FCB1A2539B86000C756DA /* LaunchScreen.storyboard in Resources */,
 				2E7FCC2E253AC9AE00C756DA /* ChartCell.xib in Resources */,
 				2E7FCBE22539BB5600C756DA /* LibraryItemCell.xib in Resources */,
+				2E08886125435C8B0022A8C3 /* PreferenceCell.xib in Resources */,
 				2E7FCBE62539BB5600C756DA /* ShazamItemCell.xib in Resources */,
+				2E088857254358EF0022A8C3 /* StreamingCell.xib in Resources */,
 				2E7FCB172539B86000C756DA /* Assets.xcassets in Resources */,
 				2E7FCC31253ACF2400C756DA /* AroundTheWorldChartsCell.xib in Resources */,
 				2E7FCBFF2539E28B00C756DA /* ShazamStoryboard.storyboard in Resources */,
@@ -418,6 +488,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E08886C254362550022A8C3 /* StreamingModel.swift in Sources */,
 				2E7FCBE42539BB5600C756DA /* ShazamItemCell.swift in Sources */,
 				2E7FCBE02539BB5600C756DA /* LibraryItem.swift in Sources */,
 				2E7FCBEA2539BB5600C756DA /* PagerPresenter.swift in Sources */,
@@ -430,6 +501,7 @@
 				2E7FCC2B253AC99D00C756DA /* ChartCell.swift in Sources */,
 				2E7FCC4A253B151B00C756DA /* LibraryPresenter.swift in Sources */,
 				2E7FCBE52539BB5600C756DA /* ActionItemCell.swift in Sources */,
+				2E088868254361C30022A8C3 /* PerferenceModel.swift in Sources */,
 				2E7FCBDF2539BB5600C756DA /* ShazamItem.swift in Sources */,
 				2E7FCBDE2539BB5600C756DA /* ActionItem.swift in Sources */,
 				2E7FCBD82539BB5600C756DA /* CollectionSectionModel.swift in Sources */,
@@ -437,13 +509,17 @@
 				2E7FCC27253AC98100C756DA /* AroundTheWorldChartsCell.swift in Sources */,
 				2E7FCBEB2539BB5600C756DA /* PageModel.swift in Sources */,
 				2E7FCB0E2539B85D00C756DA /* AppDelegate.swift in Sources */,
+				2E08886425435D780022A8C3 /* PreferenceCell.swift in Sources */,
 				2E7FCB102539B85D00C756DA /* SceneDelegate.swift in Sources */,
 				2E7FCC55253B15A300C756DA /* ChartItem.swift in Sources */,
 				2E7FCC34253AD18300C756DA /* AroundTheWorldChartsItem.swift in Sources */,
 				2E7FCC07253A1BA100C756DA /* ShazamPresenter.swift in Sources */,
 				2E7FCBDA2539BB5600C756DA /* CollectionModel.swift in Sources */,
+				2E088875254363930022A8C3 /* SettingsPresenter.swift in Sources */,
+				2E08885E25435A8F0022A8C3 /* StreamingCell.swift in Sources */,
 				2E7FCC44253B01CD00C756DA /* DataSource.swift in Sources */,
 				2E7FCC03253A177100C756DA /* PagerViewController.swift in Sources */,
+				2E088853254357970022A8C3 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
