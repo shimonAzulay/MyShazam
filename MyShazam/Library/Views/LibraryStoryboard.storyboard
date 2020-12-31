@@ -3,7 +3,7 @@
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -63,6 +63,7 @@
                             <constraint firstItem="lL7-D7-TYK" firstAttribute="top" secondItem="GOp-gW-i1b" secondAttribute="top" constant="9" id="kss-Qg-0aV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="TCV-G4-AXr"/>
                     <connections>
                         <outlet property="activityIndicator" destination="zaT-RJ-QUN" id="zsb-Gc-15e"/>
                         <outlet property="collectionView" destination="Myk-Af-zIB" id="Yyg-O9-DPw"/>
@@ -72,7 +73,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="faZ-d6-SeO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="fUv-gt-5lD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-36.231884057971016" y="111.16071428571428"/>
+            <point key="canvasLocation" x="871.01449275362324" y="110.86956521739131"/>
         </scene>
     </scenes>
     <resources>

@@ -37,7 +37,8 @@ class LibraryViewController: UIViewController, PageViewControllerProtocol
         let storyboard = UIStoryboard(name: "Settings", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "SettingsVC") as? SettingsViewController else { return }
         vc.settingsPresenter = SettingsPresenter()
-        self.show(vc, sender: nil)
+    
+        self.show(vc, sender: self)
     }
 }
 

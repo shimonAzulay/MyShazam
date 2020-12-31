@@ -182,6 +182,7 @@
 		2E7FCB0C2539B85D00C756DA /* MyShazam */ = {
 			isa = PBXGroup;
 			children = (
+				2ED3633D258E8E3B00F44023 /* Extensions */,
 				2E08884D254356180022A8C3 /* Settings */,
 				2E7FCC3F253B018600C756DA /* Data Source */,
 				2E7FCC18253A3E0800C756DA /* Charts */,
@@ -406,6 +407,13 @@
 				2E7FCC43253B01CD00C756DA /* DataSource.swift */,
 			);
 			path = "Data Source";
+			sourceTree = "<group>";
+		};
+		2ED3633D258E8E3B00F44023 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
